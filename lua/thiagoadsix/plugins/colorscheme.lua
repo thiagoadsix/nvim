@@ -1,32 +1,27 @@
+-- return {
+--   "nyoom-engineering/oxocarbon.nvim",
+--   priority = 1000,
+--   config = function()
+--     -- Set the background color to dark or light
+--     vim.opt.background = "dark" -- or "light" depending on your preference
+--
+--     -- Apply the Oxocarbon colorscheme
+--     vim.cmd.colorscheme("oxocarbon")
+--
+--     -- Optional: Add transparent background
+--     vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
+--     vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
+--   end,
+-- }
 return {
-  "mofiqul/vscode.nvim",
-  priority = 1000,
+  "projekt0n/github-nvim-theme",
+  lazy = false, -- make sure we load this during startup if it is your main colorscheme
+  priority = 1000, -- make sure to load this before all the other start plugins
   config = function()
-    -- Setup the theme
-    require("vscode").setup({
-      -- Enable transparent background
-      transparent = false,
-
-      -- Enable italic comments
-      italic_comments = true,
-
-      -- Disable nvim-tree background color
-      disable_nvimtree_bg = false,
-
-      -- Override colors (you can customize this further)
-      color_overrides = {
-        vscLineNumber = "#FFFFFF",
-      },
-
-      -- Override highlight groups (you can customize this further)
-      group_overrides = {
-        -- this supports the same val table as vim.api.nvim_set_hl
-        -- use colors from this or use colors from vim.g.colors_name
-        Cursor = { fg = "#FFFFFF", bg = "#FF0000", bold = true },
-      },
+    require("github-theme").setup({
+      -- ...
     })
 
-    -- Set the colorscheme
-    vim.cmd("colorscheme vscode")
+    vim.cmd("colorscheme github_dark_default")
   end,
 }

@@ -11,12 +11,17 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-require("lazy").setup({ { import = "thiagoadsix.plugins" }, { import = "thiagoadsix.plugins.lsp" } },  {
+require("lazy").setup({
+  { import = "thiagoadsix.plugins" },
+  { import = "thiagoadsix.plugins.lsp" },
+
+  -- Other plugins...
+}, {
   checker = {
-    enlabled = true,
+    enabled = true,
     notify = false,
   },
-  change_detectio = {
+  change_detection = {
     notify = false,
-  }
+  },
 })
